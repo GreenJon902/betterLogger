@@ -61,7 +61,7 @@ if not config.disable_welcome_logging:
     root_logger.critical(standard_format("Welcome to {appname}"))
     root_logger.error(standard_format("Version {appversion}"))
     root_logger.warning(standard_format("Made by {appauthor}"))
-    root_logger.info(f"Logger setup and saving to {file_handler.path}")
+    root_logger.info(f"Logger setup and saving to /path/to/log/file.log")
     # noinspection SpellCheckingInspection
     root_logger.debug("Idk what to put here sooo...")
     root_logger.trace(" 0 /    |  |  +---  |   |   +--+")
