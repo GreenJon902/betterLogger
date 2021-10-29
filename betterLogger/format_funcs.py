@@ -1,10 +1,10 @@
 import datetime
 
-import app_info
-from logger import colors
+import colors
+import config
 
-standard_tags = {"name": app_info.name, "author": app_info.author, "version": app_info.version,
-                 "short_name": app_info.name_short}
+standard_tags = {"appname": config.appname, "appauthor": config.appauthor, "appversion": config.appversion,
+                 "short_appname": config.short_appname}
 
 
 # noinspection PyDefaultArgument

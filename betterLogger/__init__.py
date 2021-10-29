@@ -5,13 +5,13 @@ import sys
 from copy import copy
 from logging import Manager
 
-import constants
-from logger.classWithLogger import ClassWithLogger
-from logger.consoleHandler import ConsoleHandler
-from logger.fileHandler import FileHandler
+from classWithLogger import ClassWithLogger
+from consoleHandler import ConsoleHandler
+from fileHandler import FileHandler
 # Setting up logger ----------------------------------------------------------------------------------------------------
-from logger.format_funcs import standard_format
-from logger.formatter import Formatter
+from format_funcs import standard_format
+import config
+from formatter import Formatter
 
 logging.TRACE = 9
 logging.DUMP = 10
@@ -57,25 +57,21 @@ root_logger.addHandler(file_handler)
 logging.Logger.manager = Manager(root_logger)
 
 # Testing --------------------------------------------------------------------------------------------------------------
-root_logger.critical(standard_format("Welcome to {name}"))
-root_logger.error(standard_format("Version {version}"))
-root_logger.warning(standard_format("Made by {author}"))
-root_logger.info(f"Logger setup and saving to {file_handler.path}")
-# noinspection SpellCheckingInspection
-root_logger.debug("Idk what to put here sooo...")
-root_logger.trace(" 0 /    |  |  +---  |   |   +--+")
-root_logger.dump("/|'     +--+  +--   |   |   |  |")
-root_logger.trace("/ \\     |  |  +---  +-  +-  +--+")
-root_logger.dump("")
+if not config.disable_welcome_logging:
+    root_logger.critical(standard_format("Welcome to {appname}"))
+    root_logger.error(standard_format("Version {appversion}"))
+    root_logger.warning(standard_format("Made by {appauthor}"))
+    root_logger.info(f"Logger setup and saving to {file_handler.path}")
+    # noinspection SpellCheckingInspection
+    root_logger.debug("Idk what to put here sooo...")
+    root_logger.trace(" 0 /    |  |  +---  |   |   +--+")
+    root_logger.dump("/|'     +--+  +--   |   |   |  |")
+    root_logger.trace("/ \\     |  |  +---  +-  +-  +--+")
+    root_logger.dump("")
 
 
-if "LOG_LEVEL" in os.environ:
-    root_logger.info(f"Setting log level to {os.environ.get('LOG_LEVEL')}")
-    console_handler.setLevel(int(os.environ.get("LOG_LEVEL")))
-else:
-    root_logger.warning(f"No log level in environ, defaulting to {constants.logging.default_log_level}")
-    console_handler.setLevel(constants.logging.default_log_level)
-
+root_logger.info(f"Setting log level to {config.log_level}")
+root_logger.setLevel(config.log_level)
 # ----------------------------------------------------------------------------------------------------------------------
 
 
