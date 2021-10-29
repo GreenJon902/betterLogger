@@ -19,7 +19,7 @@ All parts of the logger can be configured via environment variables.
 * `"LOG_FILE_NAME_FORMAT"` - defaults to `"{appname}_{year}-{day}-{hour}-{minute}_{number}.log"`
 * `"DISABLE_WELCOME_LOGGING"` - 
   * BetterLogger sends some welcome text to introduce the program and to test the logger
-    ![Weclome logging example](images/welcome_logging_example.png)
+    ![weclome logging example](images/welcome_logging_exampl.png)
   * defaults to `False`
 
 
