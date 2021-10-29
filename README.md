@@ -1,2 +1,2 @@
 # BetterLogger
-The best option for customizable and simplicity!
+#### The best option for customizable and simplicity!
