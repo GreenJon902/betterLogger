@@ -6,7 +6,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="betterLogger",
-    version="1.0.0",
+    version="1.0",
     description="A great colored logger!",
     long_description=README,
     long_description_content_type="text/markdown",
