@@ -1,8 +1,8 @@
 import os.path
 from logging import FileHandler as _FileHandler
 
-import config
-from format_funcs import standard_format
+from betterLogger import config
+from betterLogger.format_funcs import standard_format
 
 
 class FileHandler(_FileHandler):

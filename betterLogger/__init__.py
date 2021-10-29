@@ -1,17 +1,16 @@
 import logging
-import os
 # noinspection PyUnresolvedReferences
 import sys
 from copy import copy
 from logging import Manager
 
-from classWithLogger import ClassWithLogger
-from consoleHandler import ConsoleHandler
-from fileHandler import FileHandler
+from betterLogger.classWithLogger import ClassWithLogger
+from betterLogger.consoleHandler import ConsoleHandler
+from betterLogger.fileHandler import FileHandler
 # Setting up logger ----------------------------------------------------------------------------------------------------
-from format_funcs import standard_format
-import config
-from formatter import Formatter
+from betterLogger.format_funcs import standard_format
+from betterLogger import config
+from betterLogger.formatter import Formatter
 
 logging.TRACE = 9
 logging.DUMP = 10

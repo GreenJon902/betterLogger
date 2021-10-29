@@ -1,7 +1,7 @@
 import datetime
 
-import colors
-import config
+from betterLogger import colors
+from betterLogger import config
 
 standard_tags = {"appname": config.appname, "appauthor": config.appauthor, "appversion": config.appversion,
                  "short_appname": config.short_appname}

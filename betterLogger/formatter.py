@@ -1,9 +1,9 @@
 import copy
 from logging import Formatter as _Formatter
 
-import colors
-import config
-from format_funcs import colored_format
+from betterLogger import colors
+from betterLogger import config
+from betterLogger.format_funcs import colored_format
 
 
 class Formatter(_Formatter):
