@@ -1,0 +1,2 @@
+recursive-include betterLogger *.py
+recursive-include images *.png
