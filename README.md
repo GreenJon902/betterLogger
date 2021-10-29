@@ -4,27 +4,22 @@
 ## Config
 All parts of the logger can be configured via environment variables.
 
-* `"APPNAME"` - 
-  * defaults to `"BetterLogger"`
-* `"APPAUTHOR"` - 
-  * defaults to `"BetterLogger"`
-* `"APPVERSION"` - 
-  * defaults to `"1.0"`
-* `"SHORT_APPNAME"` - 
-  * defaults to `"BL"`
+### Required
+* `"APPNAME"` - defaults to `"BetterLogger"`
+* `"APPAUTHOR"` - defaults to `"BetterLogger"`
+* `"APPVERSION"` - defaults to `"1.0"`
+* `"SHORT_APPNAME"` - defaults to `"BL"`
 
+### Logging Stuff
+* `"LOG_LEVEL"` - defaults to `10`
+* `"LOG_FORMAT"` - defaults to `"%LEVEL_COLOR[%BOLD{level: <10}]%RESET %LEVEL_COLOR[%BOLD{class_name: <32}]%RESET %LEVEL_COLOR {message}%RESET"`
 
-* `"LOG_LEVEL"` - 
-  * defaults to `10`
-* `"LOG_FORMAT"` - 
-  * defaults to `"%LEVEL_COLOR[%BOLD{level: <10}]%RESET %LEVEL_COLOR[%BOLD{class_name: <32}]%RESET %LEVEL_COLOR {message}%RESET"`
-
-
-* `"LOG_SAVE_DIR"` - 
-  * defaults to `appdirs.user_log_dir(appname=appname, appauthor=appauthor, version=appversion)`
-* `"LOG_FILE_NAME_FORMAT"` - 
-  * defaults to `"{appname}_{year}-{day}-{hour}-{minute}_{number}.log"`
+### Saving Logs
+* `"LOG_SAVE_DIR"` - defaults to `appdirs.user_log_dir(appname=appname, appauthor=appauthor, version=appversion)`
+* `"LOG_FILE_NAME_FORMAT"` - defaults to `"{appname}_{year}-{day}-{hour}-{minute}_{number}.log"`
 * `"DISABLE_WELCOME_LOGGING"` - 
+  * BetterLogger sends some welcome text to introduce the program and to test the logger
+    ![](../../../../../../../../var/folders/99/bmlgh7491pncrjj844wt_q6h0000gn/T/TemporaryItems/(A Document Being Saved By screencaptureui)/Screenshot 2021-10-29 at 20.13.01.png)
   * defaults to `False`
 
 
