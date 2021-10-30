@@ -23,3 +23,10 @@ save_dir = get_from_environ_else("LOG_SAVE_DIR", appdirs.user_log_dir(appname=ap
 save_name = get_from_environ_else("LOG_FILE_NAME_FORMAT", "{appname}_{year}-{day}-{hour}-{minute}_{number}.log")
 
 disable_welcome_logging = bool(get_from_environ_else("DISABLE_WELCOME_LOGGING", False))
+
+log_whitelist_on = bool(get_from_environ_else("LOG_WHITELIST_ON", False))
+log_whitelist = list(get_from_environ_else("LOG_WHITELIST", []))
+log_blacklist = list(get_from_environ_else("LOG_BLACKLIST", []))
+
+log_names_to_shorten = dict(get_from_environ_else("LOG_NAMES_TO_SHORTEN", {}))
+
