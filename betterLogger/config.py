@@ -4,7 +4,7 @@ import appdirs
 
 def get_from_environ_else(key, if_not_exists):
     if key in os.environ:
-        return eval(os.environ.get(key))
+        return os.environ.get(key)
     else:
         return if_not_exists
 
@@ -25,8 +25,8 @@ save_name = get_from_environ_else("LOG_FILE_NAME_FORMAT", "{appname}_{year}-{day
 disable_welcome_logging = bool(get_from_environ_else("DISABLE_WELCOME_LOGGING", False))
 
 log_whitelist_on = bool(get_from_environ_else("LOG_WHITELIST_ON", False))
-log_whitelist = list(get_from_environ_else("LOG_WHITELIST", []))
-log_blacklist = list(get_from_environ_else("LOG_BLACKLIST", []))
+log_whitelist = list(eval(get_from_environ_else("LOG_WHITELIST", "[]")))
+log_blacklist = list(eval(get_from_environ_else("LOG_BLACKLIST", "[]")))
 
 log_names_to_shorten = dict(get_from_environ_else("LOG_NAMES_TO_SHORTEN", {}))
 
