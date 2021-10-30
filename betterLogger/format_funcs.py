@@ -17,7 +17,7 @@ def standard_format(string: str, custom_tags: dict[str, any] = {}) -> str:
     tags.update(standard_tags)
     tags.update(custom_tags)
     tags.update(time_now)
-    return string.format(**tags)
+    return string.format(**tags).format(**tags)
 
 
 # noinspection PyDefaultArgument
