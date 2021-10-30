@@ -28,5 +28,5 @@ log_whitelist_on = bool(get_from_environ_else("LOG_WHITELIST_ON", False))
 log_whitelist = list(eval(get_from_environ_else("LOG_WHITELIST", "[]")))
 log_blacklist = list(eval(get_from_environ_else("LOG_BLACKLIST", "[]")))
 
-log_names_to_shorten = dict(get_from_environ_else("LOG_NAMES_TO_SHORTEN", {}))
+log_names_to_shorten = dict(eval(get_from_environ_else("LOG_NAMES_TO_SHORTEN", "{}")))
 
