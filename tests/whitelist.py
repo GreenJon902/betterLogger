@@ -12,6 +12,6 @@ c = betterLogger.get_logger("C")
 
 a.log_info("You shouldn't be able to see this")
 b.log_info("You shouldn't be able to see this")
-c.log_info("You should be able to see this and another message")
+c.log_info("You should be able to see this and 1 other message from A.F")
 a.push_logger_name("F")
-a.log_info("You should be able to see this and another message")
+a.log_info("You should be able to see this and 1 other message from C")
