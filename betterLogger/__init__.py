@@ -8,6 +8,7 @@ from betterLogger.classWithLogger import ClassWithLogger
 from betterLogger.consoleHandler import ConsoleHandler
 from betterLogger.fileHandler import FileHandler
 # Setting up logger ----------------------------------------------------------------------------------------------------
+from betterLogger.filter import Filter
 from betterLogger.format_funcs import standard_format
 from betterLogger import config
 from betterLogger.formatter import Formatter
@@ -41,11 +42,15 @@ console_handler.setLevel(logging.TRACE)
 # noinspection PyUnresolvedReferences
 file_handler.setLevel(logging.TRACE)
 
+# noinspection PyShadowingBuiltins
+filter = Filter()
 
 console_formatter = Formatter(use_color=True)
 file_formatter = Formatter(use_color=False)
 console_handler.setFormatter(console_formatter)
 file_handler.setFormatter(file_formatter)
+console_handler.addFilter(filter)
+file_handler.addFilter(filter)
 
 
 root_logger.addHandler(console_handler)

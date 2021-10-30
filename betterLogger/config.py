@@ -4,7 +4,7 @@ import appdirs
 
 def get_from_environ_else(key, if_not_exists):
     if key in os.environ:
-        return os.environ.get(key)
+        return eval(os.environ.get(key))
     else:
         return if_not_exists
 
