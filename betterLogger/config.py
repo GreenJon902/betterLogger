@@ -11,7 +11,7 @@ def get_from_environ_else(key, if_not_exists):
 
 appname = get_from_environ_else("APPNAME", "BetterLogger")
 appauthor = get_from_environ_else("APPAUTHOR", "BetterLogger")
-appversion = get_from_environ_else("APPVERSION", "1.0")
+appversion = get_from_environ_else("APPVERSION", "1.6")
 short_appname = get_from_environ_else("SHORT_APPNAME", "BL")
 
 log_level = int(get_from_environ_else("LOG_LEVEL", 10))
